@@ -14,6 +14,7 @@ app.use(
   cors({
     origin: 'https://blog-website-three-ruddy.vercel.app', // frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
   })
 )
 app.use(express.json())
