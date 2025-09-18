@@ -6,9 +6,12 @@ export const getAllPosts = createAsyncThunk(
   'post/getAll',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axois.get('http://localhost:8080/api/post', {
-        withCredentials: true,
-      })
+      const response = await axois.get(
+        'https://blogwebsite-5l2a.onrender.com/api/post',
+        {
+          withCredentials: true,
+        }
+      )
       return response.data
     } catch (error) {
       return rejectWithValue(
@@ -23,7 +26,7 @@ export const createPost = createAsyncThunk(
   async (createPostData, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        'http://localhost:8080/api/post/create',
+        'https://blogwebsite-5l2a.onrender.com/api/post/create',
         createPostData,
         {
           headers: {
@@ -46,7 +49,7 @@ export const likeOnPost = createAsyncThunk(
   async (postId, { rejectWithValue }) => {
     try {
       const response = await axios.put(
-        `http://localhost:8080/api/post/like/${postId}`,
+        `https://blogwebsite-5l2a.onrender.com/api/post/like/${postId}`,
         {},
         {
           withCredentials: true,
@@ -66,7 +69,7 @@ export const commentOnPost = createAsyncThunk(
   async (commentData, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        'http://localhost:8080/api/post/comment',
+        'https://blogwebsite-5l2a.onrender.com/api/post/comment',
         commentData,
         {
           withCredentials: true,
@@ -86,7 +89,7 @@ export const userPost = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/post/user-post`,
+        `https://blogwebsite-5l2a.onrender.com/api/post/user-post`,
 
         {
           withCredentials: true,
@@ -107,7 +110,7 @@ export const updatePost = createAsyncThunk(
     try {
       const { postId, ...postData } = DataForUpdatePost
       const response = await axios.put(
-        `http://localhost:8080/api/post/update/${postId}`,
+        `https://blogwebsite-5l2a.onrender.com/api/post/update/${postId}`,
         postData,
         {
           withCredentials: true,
@@ -127,7 +130,7 @@ export const deletePost = createAsyncThunk(
   async (postId, { rejectWithValue }) => {
     try {
       const response = await axios.delete(
-        `http://localhost:8080/api/post/delete/${postId}`,
+        `https://blogwebsite-5l2a.onrender.com/api/post/delete/${postId}`,
         {
           withCredentials: true,
         }

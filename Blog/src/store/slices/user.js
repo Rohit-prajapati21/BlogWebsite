@@ -6,7 +6,7 @@ export const signUp = createAsyncThunk(
   async (userSignUpData, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        'http://localhost:8080/api/user/sign-up',
+        'https://blogwebsite-5l2a.onrender.com/api/user/sign-up',
         userSignUpData,
         { withCredentials: true }
       )
@@ -22,7 +22,7 @@ export const login = createAsyncThunk(
   async (userLoginData, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        'http://localhost:8080/api/user/login',
+        'https://blogwebsite-5l2a.onrender.com/api/user/login',
         userLoginData,
         { withCredentials: true }
       )
@@ -38,7 +38,7 @@ export const updateUser = createAsyncThunk(
   async (DataForUserUpdate, { rejectWithValue }) => {
     try {
       const response = await axios.put(
-        'http://localhost:8080/api/user/update',
+        'https://blogwebsite-5l2a.onrender.com/api/user/update',
         DataForUserUpdate,
         { withCredentials: true }
       )
@@ -54,7 +54,7 @@ export const logout = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        'http://localhost:8080/api/user/logout',
+        'https://blogwebsite-5l2a.onrender.com/api/user/logout',
         {},
         { withCredentials: true }
       )
