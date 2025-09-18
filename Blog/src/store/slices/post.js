@@ -1,12 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
-import axois from 'axios'
-
 export const getAllPosts = createAsyncThunk(
   'post/getAll',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axois.get(
+      const response = await axios.get(
         'https://blogwebsite-5l2a.onrender.com/api/post',
         {
           withCredentials: true,
