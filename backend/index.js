@@ -12,8 +12,9 @@ const checkAuthorization = require('./middlewares/auth')
 mongodbConnection()
 app.use(
   cors({
-    origin: 'https://blog-website-three-ruddy.vercel.app', // frontend URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    origin: 'https://blog-website-three-ruddy.vercel.app', // your frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
   })
 )
