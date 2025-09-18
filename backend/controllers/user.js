@@ -36,7 +36,9 @@ async function loginHandler(req, res) {
 
     const token = generateToken(user, {
       httpOnly: true,
-      sameSite: 'strict',
+      secure: true, // must be true on HTTPS (Vercel + Render are HTTPS)
+      sameSite: 'none', // allow cross-site cookies
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     })
 
     res.cookie('token', token)
@@ -68,7 +70,9 @@ async function updateUserHandler(req, res) {
     })
     const token = generateToken(user, {
       httpOnly: true,
-      sameSite: 'strict',
+      secure: true, // must be true on HTTPS (Vercel + Render are HTTPS)
+      sameSite: 'none', // allow cross-site cookies
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     })
 
     res.cookie('token', token)
